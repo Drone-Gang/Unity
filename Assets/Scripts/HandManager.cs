@@ -18,10 +18,7 @@ public class HandManager : MonoBehaviour
 
 	//negative is down / back / left
 	//positive is up / forward / right
-	public float[] DroneMovement = {0.0f,	//up-down
-									0.0f,	//pan
-									0.0f,	//for-back
-									0.0f }; //rotate
+	public Quaternion DroneMovement;
 
 	// Start is called before the first frame update
 	void Start() {
@@ -97,6 +94,10 @@ public class HandManager : MonoBehaviour
 			default:    //tee-hee (do nothing)
 				break;
 		}
+
+		// SLAP our drone movement quaterion onto our managers transform
+		// hack the planet
+		transform.SetPositionAndRotation(transform.position, DroneMovement);
 	}
 
 	int Sign(float i) {
@@ -105,9 +106,12 @@ public class HandManager : MonoBehaviour
 		return 0;
 	}
 
-	void Zero(float[] arr) {
-		for(int i = 0; i < arr.Length; i++) {
-			arr[i] = 0.0f;
+	/*
+	 * is this bad practice, probably... 
+	 */
+	void Zero(Quaternion q) {
+		for(int i = 0; i < 4; i++) {
+			q[i] = 0.0f;
 		}
 	}
 
