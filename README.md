@@ -2,4 +2,4 @@
 
 ![Alt text]
 <img src="./project_diagram.svg">
-<img src="./cia_evesdropping_exe.png">
+<img src="./cia_eavesdropping_exe.png">
