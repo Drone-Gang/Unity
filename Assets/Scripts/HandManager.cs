@@ -7,7 +7,10 @@ public class HandManager : MonoBehaviour
 	public GameObject leftHand;
 	public GameObject rightHand;
 
-	public float deadZoneSize = 1.0f;
+    public GameObject rh_deadzone;
+    public GameObject lh_deadzone;
+
+	public float deadZoneSize = 0.3f;
 	public float sensitivity = 1.0f;
 
 	public Vector3 leftHandInitialPos;
@@ -25,6 +28,12 @@ public class HandManager : MonoBehaviour
 		//do the intial setup here because i am lazy
 		leftHandInitialPos = leftHand.transform.position;
 		rightHandInitialPos = rightHand.transform.position;
+
+        rh_deadzone.transform.position = rightHandInitialPos;
+        lh_deadzone.transform.position = leftHandInitialPos;
+
+        lh_deadzone.transform.localScale = new Vector3(deadZoneSize, deadZoneSize, deadZoneSize);
+        rh_deadzone.transform.localScale = new Vector3(deadZoneSize, deadZoneSize, deadZoneSize);
     }
 
     // Update is called once per frame

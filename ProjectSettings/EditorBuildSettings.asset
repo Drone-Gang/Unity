@@ -5,7 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/hands.unity
+    guid: 689ec0c852247164f9ad3cbcd1554e4b
+  - enabled: 0
+    path: Assets/Oculus/VR/Scenes/Trivial.unity
+    guid: d8d21f2460d13554780e4af04a9e0d6e
   m_configObjects: {}
